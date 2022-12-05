@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    touch-action: pan-y;
+}
+
+@layer components {
+
+
+    .sidebar {
+        @apply flex w-16 h-full text-white shadow-lg
+        rounded-r-md bg-gradient-to-b from-siemenspetrol to-deepblue80pc
+
+        transition-all duration-100 ease-linear z-50;
+        -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+        -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+        -webkit-user-select: none;
+    }
+
+    .sidebar-icon {
+        @apply relative flex items-center justify-center
+        h-12 w-12  col-span-2 mt-2 mb-2 mx-auto
+        bg-lightsand hover:bg-deepblue dark:bg-darkbar dark:text-white
+        text-deepblue hover:text-lightsand
+        rounded-xl hover:rounded-md hover:scale-105
+        transition-all duration-100 ease-linear
+        cursor-pointer shadow-2xl z-50;
+        -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+        -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+        -webkit-user-select: none;
+    }
+    .unselectable {
+        -moz-user-select: none;
+        -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+        -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .centering {
+        @apply flex flex-wrap flex-row min-h-full h-full p-3 justify-center items-center;
+    }
+
+
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+        text-white bg-deepblue80pc z-50
+        text-xs font-bold
+        transition-all duration-100 scale-0 origin-left;
+    }
+
+    .sidebar-hr {
+        @apply bg-gray-200 dark:bg-gray-800
+        border border-gray-200 dark:border-gray-800 rounded-full
+        mx-4;
+    }
+
+    .top-button {
+        @apply text-deepblue lg:hover:text-white md:active:text-white  bg-white lg:hover:bg-deepblue md:active:bg-deepblue
+        h-7 w-7 relative flex items-center justify-center rounded-full scale-125 lg:hover:scale-150
+        transition-all duration-100 ease-in-out translate-x-1 z-50 dark:bg-siemenspetrol
+        cursor-pointer shadow-md  transform active:rotate-90 active:scale-110 dark:lg:hover:bg-siemenspetrol
+        dark:md:active:bg-siemenspetrol;
+    }
+
+    .top-bar {
+        @apply flex shadow rounded justify-between items-center bg-white dark:bg-deepblue p-3.5 z-30 dark:bg-darkbar;
+    }
+
+    .control-button {
+        @apply relative flex items-center justify-center
+        h-16 w-16  col-span-2 mt-2 mb-2 mx-auto
+        bg-white dark:bg-siemenspetrol dark:text-white active:bg-deepblue
+        text-deepblue active:text-lightsand
+        rounded-xl active:rounded-md
+        transition-all duration-100 ease-linear unselectable
+        cursor-pointer shadow-md lg:hover:scale-105 z-30;
+        -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+        -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+        -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    }
+
+    .wide-control-button {
+        @apply relative flex items-center justify-center
+        h-16 w-28  col-span-3 mt-2 mb-2 mx-auto
+        bg-white active:bg-deepblue dark:bg-siemenspetrol dark:text-white
+        text-deepblue active:text-lightsand
+        rounded-xl active:rounded-md lg:hover:scale-105
+        transition-all duration-100 ease-linear
+        cursor-pointer shadow-md z-30;
+    }
+
+    .data{
+        @apply  rounded-md shadow-md w-full md:w-med lg:w-med;
+
+    }
+
+    .player-wrapper{
+        margin: 0 auto;
+        width: 1280px;
+    }
+
+    .darktoggle-backround{
+        @apply w-16 h-8 bg-gray-100 dark:bg-darkcard shadow-md rounded-full flex  items-center p-0.5
+        ring-opacity-50 ring-1 ring-gray-900 dark:ring-siemensgreen;
+    }
+
+    .darktoggle-circle{
+        @apply w-7 h-7  flex flex-wrap flex-col
+        min-h-full  justify-center items-center rounded-full bg-deepblue dark:bg-siemenspetrol
+        text-white transform   transition-all items-center duration-100 ease-linear;
+    }
+
+    .link-button{
+        @apply text-xl hover:drop-shadow-lg
+        h-12  bg-gradient-to-b from-softgreen to-softblue
+        transition-all duration-100 ease-linear text-center
+        cursor-pointer shadow-sm rounded-lg p-2 text-white z-50;
+    }
+}
+
+
+
+@tailwind utilities;
